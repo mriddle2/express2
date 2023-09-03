@@ -21,8 +21,8 @@ const html = `
     co.</title>
   <meta name="description"
     content="🤪 🙃 😝 😜">
-  <link rel="stylesheet" href="/common/fonts/fonts.css">
-  <link rel="stylesheet" href="/common/base.css">
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/base.css">
   <link rel="stylesheet" href="/central.css">
   <link rel="manifest" href="/manifest.json">
 
@@ -76,7 +76,7 @@ const html = `
           <div data-text="itsSafe">We don't get your email and we can't post anything to your account.</div>
         </div>
         <div class="activeService box" hidden>
-          <div class="serviceIcon"><img src="/images/auth/guest.png"></div>
+          <div class="serviceIcon"><img src="/images/auth/guest.png" alt="Guest"></div>
           <div>
             <div data-text="peopleCanSeeYouAre">People can see you are</div><span class="username">…</span> <span
               data-text="serviceOn">on</span>&nbsp;<span class="service">…</span>.
@@ -162,10 +162,10 @@ const html = `
     </div>
   </div>
 
-  <script src="/common/dom.js"></script>
-  <script src="/common/settings.js"></script>
-  <script src="/common/getPostJson.js"></script>
-  <script src="/common/text.js"></script>
+  <script src="/dom.js"></script>
+  <script src="/settings.js"></script>
+  <script src="/getPostJson.js"></script>
+  <script src="/text.js"></script>
   <script src="/central.js"></script>
 </body>
 
