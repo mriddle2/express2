@@ -1,0 +1,711 @@
+body {
+  background: #445061;
+  color: #111;
+}
+
+body>.base {
+  background: #dddde3;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+}
+
+.welcomeFromOldGames {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcomeFromOldGames>div {
+  width: 30em;
+  margin: 1em;
+  padding: 2em;
+  text-align: center;
+}
+
+.welcomeFromOldGames h2 {
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  color: #164158;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+
+.top {
+  background: #7855c7;
+  color: #fff;
+  display: flex;
+  align-items: stretch;
+  height: 3.5em;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-family: "Pacifico", sans-serif;
+  text-transform: lowercase;
+  text-shadow: 0.05em 0.1em 0 rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  display: flex;
+  flex-flow: column;
+}
+
+h1:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+h1:active {
+  background-color: rgba(32, 32, 32, 0.2);
+}
+
+h1 a {
+  flex: 1;
+  line-height: 2.2;
+  padding: 0 0.5em 0 0.7em;
+  color: inherit;
+  text-decoration: underline;
+}
+
+.top .setup {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.top .setup .wrap {
+  display: flex;
+  padding: 0.5em;
+  align-items: center;
+  flex: 1;
+  overflow: hidden;
+}
+
+.top .setup .auth {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 2.25em;
+  padding: 0.5em 0.5em 0.5em 0.75em;
+  border-radius: 2em 0 0 2em;
+  background: rgba(32, 32, 32, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-clip: padding-box;
+  font: inherit;
+  text-align: left;
+  color: #eee;
+  display: flex;
+}
+
+.top .setup .auth img {
+  width: 1.25em;
+  height: 1.25em;
+  opacity: 0.9;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+}
+
+.top .setup .auth:hover,
+.top .setup .auth:focus {
+  background: rgba(32, 32, 32, 0.3);
+}
+
+.top .setup .auth:active {
+  background: rgba(32, 32, 32, 0.4);
+}
+
+.top .setup .auth .nickname {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.top .setup .picture {
+  width: 2.25em;
+  height: 2.25em;
+  display: flex;
+  align-items: center;
+  border-radius: 0 0.25em 0.25em 0;
+  background: rgba(32, 32, 32, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-left-color: rgba(32, 32, 32, 0.2);
+  background-clip: padding-box;
+  justify-content: center;
+  outline: none;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.top .setup .picture:not(.hasImage):hover,
+.top .setup .picture:not(.hasImage):focus {
+  background: rgba(32, 32, 32, 0.3);
+}
+
+.top .setup .picture:not(.hasImage):active {
+  background: rgba(32, 32, 32, 0.4);
+}
+
+.top .setup .picture:not(.hasImage):after {
+  content: "📷";
+}
+
+.page {
+  flex: 1;
+}
+
+.loading.page {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+
+  transform: scale(1);
+  opacity: 0;
+}
+
+.loading.page.fadeIn {
+  transition: opacity 0.2s ease-in;
+  transition-delay: 0.2s;
+  opacity: 1;
+}
+
+.error.page {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+}
+
+.error.page .title {
+  font-size: 2em;
+  font-family: "Pacifico", sans-serif;
+  color: #aaa;
+  margin-bottom: 1em;
+}
+
+.error.page .message {
+  margin-bottom: 1em;
+}
+
+.auth.page .main {
+  padding: 1em;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
+
+.auth.page form.setNickname .line,
+.auth.page form.jklmLogin .line {
+  margin-top: 0.5em;
+  justify-content: center;
+}
+
+.auth.page .nicknameRules {
+  font-size: smaller;
+}
+
+.auth.page .nickname,
+.auth.page .password {
+  margin-right: 0.5em;
+}
+
+.auth.page .services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.auth.page .services a {
+  margin: 0.25em;
+  line-height: 0;
+}
+
+.auth.page .services a:hover {
+  filter: brightness(1.2) contrast(1.1);
+}
+
+.auth.page .services a img {
+  width: 4em;
+  height: 4em;
+  border-radius: 2.5em;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.auth.page .services a:active {
+  filter: brightness(0.9) contrast(0.9);
+  box-shadow: none;
+}
+
+.auth.page .services a:active img {
+  box-shadow: none;
+}
+
+
+.activeService .serviceIcon {
+  margin-bottom: 1em;
+}
+
+.activeService .serviceIcon img {
+  width: 4em;
+  height: 4em;
+  border-radius: 2.5em;
+}
+
+.activeService .logout {
+  margin-top: 1em;
+}
+
+.home {
+  display: flex;
+  flex-flow: column;
+}
+
+.banner {
+  height: 180px;
+  background-image: url(/images/world/miniBanner@2x.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.startRoom {
+  margin-bottom: 1em;
+}
+
+.startRoom button {
+  margin-left: 0.5em;
+}
+
+.startRoom .gameSelection {
+  display: flex;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.25em;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.gameSelection input[type=radio] {
+  display: none;
+}
+
+.gameSelection>div {
+  display: inline-block;
+}
+
+.gameSelection label {
+  display: flex;
+  flex-flow: column;
+  padding: 0.25em;
+  margin-right: 0.25em;
+  width: 8em;
+  height: 10em;
+  background: #ddd;
+  border-radius: 0.25em;
+  cursor: pointer;
+  text-align: center;
+}
+
+.gameSelection .icon {
+  font-size: 3em;
+  margin: 0.25em 0;
+}
+
+.gameSelection .name {
+  font-weight: bold;
+  color: #555;
+}
+
+.gameSelection .description {
+  padding-left: 0.25em;
+  color: #555;
+  font-size: small;
+}
+
+.gameSelection input[type=radio]:not(:checked):not(:disabled):hover+label {
+  background: #e3e3e3;
+}
+
+.gameSelection input[type=radio]:not(:checked):not(:disabled):active+label {
+  background: #d0d0d0;
+}
+
+.gameSelection input[type=radio]:checked+label {
+  background: #7d6fa0;
+}
+
+.gameSelection input[type=radio]:disabled+label {
+  background: transparent;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.startRoom .roomName {
+  flex: 1;
+  margin-right: 0.5em;
+  width: 0;
+  min-width: 0;
+}
+
+.gameSelection input[type=radio]:checked+label .name {
+  color: #eee;
+}
+
+.gameSelection input[type=radio]:checked+label .description {
+  color: #ccc;
+}
+
+.joinRoom.box {
+  margin-bottom: 0em;
+}
+
+.joinRoom input[type=text] {
+  text-transform: uppercase;
+  margin: 0 0.5em;
+  flex: 1;
+}
+
+.news {
+  flex: 1;
+  max-height: 8em;
+  padding: 0.75em;
+  border-radius: 0.15em;
+  margin-top: 1em;
+  font-size: smaller;
+  color: #5a5d51;
+}
+
+.news .header {
+  font-size: smaller;
+}
+
+.news .content {
+  margin-top: 0.5em;
+}
+
+.home .links {
+  padding: 0em 1em;
+  margin-top: 1em;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.home .links>div {
+  font-size: smaller;
+  line-height: 1.5;
+}
+
+.home .links img {
+  vertical-align: middle;
+  border-radius: 1em;
+  margin-top: -5px;
+}
+
+.enjoyJklm {
+  text-align: center;
+  padding: 0.5rem;
+  color: #441;
+  background: #eeb;
+  font-size: smaller;
+}
+
+.publicRooms {
+  flex: 1;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-flow: column;
+  background: #eee;
+}
+
+.publicRooms .header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.publicRooms .header header {
+  flex: 1;
+  margin-bottom: 0;
+  padding-right: 0.5em;
+}
+
+.publicRooms .listContainer {
+  position: relative;
+}
+
+.publicRooms .loading.section {
+  position: absolute;
+}
+
+.publicRooms .list {
+  padding: 1em;
+}
+
+.publicRooms .entry {
+  display: flex;
+  margin-bottom: 1em;
+  border: 1px solid #09090940;
+  background: #ffe6a4;
+  text-decoration: none;
+  color: #3c3733;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.05), 0 0.2em 0.5em rgba(0, 0, 0, 0.05);
+  transform: rotate(-2deg);
+}
+
+.publicRooms .entry.bombparty {
+  background: #e5c094;
+}
+
+.publicRooms .entry.popsauce {
+  background: #eab4f6;
+}
+
+.publicRooms .entry.beta>.stub {
+  background: #ff000087;
+}
+
+.publicRooms .entry:hover {
+  margin-top: -0.1em;
+  margin-bottom: 1.1em;
+  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.05), 0 0.45em 0.5em rgba(0, 0, 0, 0.05);
+}
+
+.publicRooms .entry:hover .cutout {
+  border: 1px solid #888;
+  border-right: transparent;
+}
+
+.publicRooms .entry:active {
+  border: 1px solid #888;
+  transition: none;
+  margin-top: 0.1em;
+  margin-bottom: 0.9em;
+  box-shadow: none;
+}
+
+.publicRooms .entry:active .cutout {
+  box-shadow: none;
+}
+
+
+.publicRooms .entry .info {
+  flex: 1;
+  padding: 0.5em;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.05);
+  margin: 0.3em;
+  border: 2px dashed rgba(0, 0, 0, 0.20);
+  border-radius: 0.25em;
+  border-right: none;
+}
+
+.publicRooms .entry .title {
+  font-weight: bold;
+  font-size: 1.25em;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25em;
+  display: flex;
+}
+
+.publicRooms .entry .title .text {
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0.75em;
+  text-overflow: ellipsis;
+}
+
+.publicRooms .entry .playerCount {
+  font-size: 0.6em;
+  margin-left: 0.5em;
+  background: #0000001f;
+  padding: 0.25em 0.5em;
+  border-radius: 1em;
+}
+
+.publicRooms .entry .playing {
+  font-size: smaller;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.publicRooms .entry .stub {
+  width: 3.5em;
+  border-left: 2px dashed #7c606082;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.publicRooms .entry .cutout {
+  width: 1em;
+  height: 2em;
+  position: absolute;
+  right: -2px;
+  border-radius: 1em 0 0 1em;
+  background: #dedede;
+  border: 1px solid #09090960;
+  border-right: transparent;
+  box-shadow: 0 0 0.5em #eee inset;
+}
+
+.publicRooms .entry .code {
+  white-space: nowrap;
+  transform: rotate(-90deg);
+  font-weight: bold;
+  transform-origin: center;
+  color: rgba(0, 0, 0, 0.3);
+  margin-left: -0.25em;
+  background: #5a555321;
+  font-family: monospace;
+  padding: 0 0.25em;
+  font-size: 20px;
+}
+
+.home .publicRooms .filter {
+  margin-right: 0.5em;
+  display: none;
+}
+
+.footer {
+  padding: 0.5em;
+  font-size: 1.5em;
+  color: #444;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.2;
+  font-family: "Pacifico", sans-serif;
+}
+
+.footer img {
+  display: block;
+  width: 3em;
+  margin-bottom: 0.5em;
+}
+
+.footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 800px) {
+  .home .columns {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .home .columns .left {
+    width: 36em;
+    margin-right: 0.5em;
+  }
+
+  .home .columns .right {
+    flex: 1;
+    margin-left: 0.5em;
+  }
+
+  .home .columns>div {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .home .columns .left .startRoom {
+    flex: 1;
+    margin-bottom: 0em;
+  }
+
+  .home .columns .left .startRoom header {
+    margin-bottom: 0.5em;
+  }
+
+  .home .columns .right .news {
+    max-height: none;
+  }
+
+  .publicRooms .list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .home .publicRooms .filter {
+    display: block;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
+  .publicRooms .entry {
+    width: calc(50% - 0.5em);
+  }
+
+  .publicRooms .entry:not(:nth-of-type(2n)) {
+    margin-right: 1em;
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    overflow-y: scroll;
+  }
+
+  body>.base {
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+  }
+
+  .top {
+    display: flex;
+  }
+
+  .top .setup {
+    display: flex;
+    align-items: center;
+  }
+
+  .top .setup .wrap {
+    flex: initial;
+    min-width: 16em;
+  }
+
+  .banner {
+    background-image: url(/images/world/banner@2x.png);
+  }
+
+  .banner:before {
+    content: "";
+    z-index: 1;
+    width: 66px;
+    height: 63px;
+    position: absolute;
+    top: -63px;
+    left: calc(50% - 33px);
+    background: url(/images/world/flag@2x.png);
+    background-size: cover;
+    background-position: center bottom;
+  }
+
+  .publicRooms .entry {
+    width: calc(33% - 0.5em);
+  }
+
+  .publicRooms .entry:not(:nth-of-type(3n)) {
+    margin-right: 1em;
+  }
+}
