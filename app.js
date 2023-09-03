@@ -141,12 +141,6 @@ const html = `
         </div>
       </div>
 
-      <!--<div class="enjoyJklm" data-html="enjoyJklm">
-        🙋‍♂️ If you enjoy BombParty and PopSauce, please <a
-          href="https://www.paypal.com/donate?hosted_button_id=XL74VRL2A4RYG">help me make more
-          games with a donation</a>. Cheers! - Elisée, developer
-      </div>-->
-
       <div class="publicRooms section">
         <div class="header">
           <header data-text="publicRooms">Public rooms</header>
@@ -164,8 +158,6 @@ const html = `
       </div>
 
       <div class="footer">
-        <img src="/images/sparklinlabs.svg">
-        <a href="http://sparklinlabs.com/">Sparklin Labs ♥</a>
       </div>
     </div>
   </div>
